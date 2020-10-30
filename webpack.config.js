@@ -45,7 +45,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: [path.join(__dirname, 'example'), path.join(__dirname, 'dist')],
+    contentBase: [path.join(__dirname, 'examples'), path.join(__dirname, 'dist')],
     port: '8000',
   },
 };
