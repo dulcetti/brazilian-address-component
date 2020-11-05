@@ -1,11 +1,15 @@
 {
   "name": "brazilian-address-component",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:dulcetti/brazilian-address-component.git",
   "author": "Bruno Dulcetti <brunodulcetti@gmail.com>",
   "license": "MIT",
   "private": false,
+  "main": "dist/brazilian-address-component.min.js",
+  "files": [
+    "dist/brazilian-address-component.min.js",
+    "dist/brazilian-address-component.style.min.css"
+  ],
   "scripts": {
     "build": "webpack",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
