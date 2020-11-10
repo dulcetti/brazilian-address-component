@@ -47,5 +47,37 @@ export default class BrazilianAddressComponent {
   private _buildComponentFields() {
     const form: HTMLFormElement = document.createElement('form');
     form.classList.add('form-address');
+
+    const inputCep = this._buildInput({
+      id: 'cep',
+      label: 'CEP da sua residência (somente números)',
+      name: 'input-cep',
+      placeholder: 'Ex: 00000-000',
+    });
+
+    form.appendChild(inputCep);
+
+    document.body.appendChild(form);
+  }
+
+  private _buildInput(input: IInput): HTMLInputElement {
+    const inputAttrs: IInput = {
+      ...this.defaultInput,
+      ...input,
+    };
+    const inputHtml: HTMLInputElement = document.createElement('input');
+    this._setAttributesOnInput(inputAttrs, inputHtml);
+
+    return inputHtml;
+  }
+
+  private _setAttributesOnInput(attrs: IInput, input: HTMLInputElement): HTMLInputElement {
+    for (const key in attrs) {
+      if (Object.prototype.hasOwnProperty.call(attrs, key)) {
+        input.setAttribute(key, attrs[key]);
+      }
+    }
+
+    return input;
   }
 }
