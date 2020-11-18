@@ -41,13 +41,10 @@ export default class BrazilianAddressComponent {
       ...options,
     };
 
-    this._buildComponentFields();
+    this._buildComponentForm();
   }
 
-  private _buildComponentFields() {
-    const form: HTMLFormElement = document.createElement('form');
-    form.classList.add('form-address');
-
+  private _buildComponentFields(fieldset: HTMLFieldSetElement): HTMLFieldSetElement {
     const inputCep = this._buildInput({
       id: 'cep',
       label: 'CEP da sua residência (somente números)',
@@ -55,7 +52,20 @@ export default class BrazilianAddressComponent {
       placeholder: 'Ex: 00000-000',
     });
 
-    form.appendChild(inputCep);
+    fieldset.appendChild(inputCep);
+
+    return fieldset;
+  }
+
+  private _buildComponentForm() {
+    const form: HTMLFormElement = document.createElement('form');
+    const fieldset: HTMLFieldSetElement = document.createElement('fieldset');
+    form.classList.add('form-address');
+    fieldset.classList.add('form-fieldset');
+
+    const fieldsetWithFields = this._buildComponentFields(fieldset);
+
+    form.appendChild(fieldsetWithFields);
 
     document.body.appendChild(form);
   }
