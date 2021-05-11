@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const name = 'brazilian-address-component';
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: `./src/${name}.ts`,
   devtool: 'source-map',
   output: {
