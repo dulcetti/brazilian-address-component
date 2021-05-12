@@ -11,11 +11,11 @@
     "dist/brazilian-address-component.style.min.css"
   ],
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "./node_modules/.bin/tslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install",
-    "start": "NODE_ENV=development webpack serve",
+    "start": "NODE_ENV=development webpack serve --mode=development",
     "test": "jest",
     "test:coverage": "jest --coverage --watchAll=false",
     "test:watch": "jest --watch",
