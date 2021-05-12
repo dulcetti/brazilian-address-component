@@ -3,7 +3,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const name = 'brazilian-address-component';
 
 module.exports = {
-  mode: 'development',
   entry: `./src/${name}.ts`,
   devtool: 'source-map',
   output: {
@@ -44,5 +43,6 @@ module.exports = {
   devServer: {
     contentBase: [path.join(__dirname, 'examples'), path.join(__dirname, 'dist')],
     port: '8000',
+    injectClient: false,
   },
 };
